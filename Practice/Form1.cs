@@ -46,6 +46,16 @@ namespace WinAnim
             this.btnAW_BLEND.Invalidate();
             this.btnHOR_AW_SLIDE.Invalidate();
             this.btnCenter_AW_SLIDE.Invalidate();
+        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.Filter = "Файлы pdf |*.pdf";
+            openFileDialog1.ShowDialog();
+            axAcroPDF1.LoadFile(openFileDialog1.FileName);
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
