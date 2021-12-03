@@ -17,6 +17,59 @@ namespace Practice
             InitializeComponent();
         }
 
+        private delegate int AsyncSumm(int a, int b);
+
+        private int Summ(int a, int b)
+        {
+            System.Threading.Thread.Sleep(9000);
+            return a + b;
+        }
+
+        private void btnRun_Click(object sender, EventArgs e)
+        {
+            int a, b;
+            try
+            {
+                a = Int32.Parse(txbA.Text);
+                b = Int32.Parse(txbB.Text);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("При выполнение преоброзования типов возникла ошибка");
+                txbA.Text = txbB.Text = "";
+                return;
+            }
+
+            AsyncSumm summdelegate = new AsyncSumm(Summ);
+            AsyncCallback cb = new AsyncCallback(CallBackMethod);
+            summdelegate.BeginInvoke(a, b, cb, summdelegate);
+        }
+
+        private void CallBackMethod(IAsyncResult ar)
+        {
+            string str;
+            AsyncSumm summdelegate = (AsyncSumm)ar.AsyncState;
+            str = String.Format("Сумма введенных чисел равна {0}", summdelegate.EndInvoke(ar));
+            MessageBox.Show(str, "Результат операции");
+            private void TimeConsumingMethod(int seconds)
+            {
+                for (int j = 1; j <= seconds; j++)
+                {
+                    System.Threading.Thread.Sleep(1000);
+                    SetProgress((int)(j * 100) / seconds);
+                    if (Cancel)
+                        break;
+                    if (Cancel)
+                    {
+                        System.Windows.Forms.MessageBox.Show("Cancelled");
+                        Cancel = false;
+                    }
+                    else
+                    {
+                        System.Windows.Forms.MessageBox.Show("Complete");
+                    }
+                }
+            }
         private void textBox1_TextChanged(object sender, System.Windows.Forms.KeyPressEventArgs e)
         {
             if (!char.IsDigit(e.KeyChar))
@@ -63,6 +116,16 @@ namespace Practice
         }
         bool Cancel;
 
+        private void btnWork_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Работа кипит!!!");
+            private void button1_Click(object sender, EventArgs e)
+            {
+                TimeConsumingMethodDelegate del = new TimeConsumingMethodDelegate(TimeConsumingMethod);
+                del.BeginInvoke(int.Parse(textBox1.Text), null, null);
+            }
+        }
+    }
         private void button1_Click(object sender, EventArgs e)
         {
             TimeConsumingMethodDelegate del = new TimeConsumingMethodDelegate(TimeConsumingMethod);
