@@ -23,6 +23,7 @@ namespace WinAnim
         private int Summ(int a, int b)
         {
             System.Threading.Thread.Sleep(9000);
+            System.Threading.Thread.Sleep(3000);
             return a + b;
         }
 
@@ -52,6 +53,17 @@ namespace WinAnim
             AsyncSumm summdelegate = (AsyncSumm)ar.AsyncState;
             str = String.Format("Сумма введенных чисел равна {0}", summdelegate.EndInvoke(ar));
             MessageBox.Show(str, "Результат операции");
+        }
+
+        private void btnWork_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Работа кипит!!!");
+        }
+
+        private void help_Click(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, helpProvider1.HelpNamespace);
+            MessageBox.Show("Работа");
             private void TimeConsumingMethod(int seconds)
             {
                 for (int j = 1; j <= seconds; j++)
