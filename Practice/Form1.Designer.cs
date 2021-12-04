@@ -35,6 +35,7 @@
             this.txbA = new System.Windows.Forms.TextBox();
             this.txbB = new System.Windows.Forms.TextBox();
             this.helpProvider1 = new System.Windows.Forms.HelpProvider();
+            this.help = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnRun
@@ -97,11 +98,26 @@
             this.txbB.Size = new System.Drawing.Size(100, 20);
             this.txbB.TabIndex = 5;
             // 
+            // helpProvider1
+            // 
+            this.helpProvider1.HelpNamespace = "C:\\Users\\Admin\\Desktop\\Git\\Praktika\\Документ Microsoft Word.docx";
+            // 
+            // help
+            // 
+            this.help.Location = new System.Drawing.Point(112, 63);
+            this.help.Name = "help";
+            this.help.Size = new System.Drawing.Size(75, 23);
+            this.help.TabIndex = 6;
+            this.help.Text = "Help";
+            this.help.UseVisualStyleBackColor = true;
+            this.help.Click += new System.EventHandler(this.help_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(409, 161);
+            this.Controls.Add(this.help);
             this.Controls.Add(this.txbB);
             this.Controls.Add(this.txbA);
             this.Controls.Add(this.lblB);
@@ -127,5 +143,8 @@
         private System.Windows.Forms.TextBox txbA;
         private System.Windows.Forms.TextBox txbB;
         private System.Windows.Forms.HelpProvider helpProvider1;
+        private System.Windows.Forms.Button help;
+    }
+}
     }
 }
