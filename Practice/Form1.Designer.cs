@@ -153,3 +153,9 @@
         private System.Windows.Forms.Button help;
     }
 }
+        private System.Windows.Forms.HelpProvider helpProvider1;
+        private System.Windows.Forms.Button help;
+    }
+}
+    }
+}

@@ -22,6 +22,7 @@ namespace Practice
         private int Summ(int a, int b)
         {
             System.Threading.Thread.Sleep(9000);
+            System.Threading.Thread.Sleep(3000);
             return a + b;
         }
 
@@ -61,6 +62,7 @@ namespace Practice
         private void help_Click(object sender, EventArgs e)
         {
             Help.ShowHelp(this, helpProvider1.HelpNamespace);
+            MessageBox.Show("Работа");
         }
     }
 }
