@@ -11,6 +11,7 @@ using System.Windows.Forms;
 
 namespace Praktika
 namespace WinAnim
+
 {
     public partial class Form1 : Form
     {
