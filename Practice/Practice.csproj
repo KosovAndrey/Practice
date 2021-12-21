@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{F797956F-8B25-4E0B-8C95-62C141498074}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Practice</RootNamespace>
-    <AssemblyName>Practice</AssemblyName>
+    <RootNamespace>Praktika</RootNamespace>
+    <AssemblyName>Praktika</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
