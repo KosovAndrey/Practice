@@ -1,4 +1,7 @@
+﻿namespace Praktika
+
 ﻿namespace WinAnim
+
 {
     partial class Form1
     {
